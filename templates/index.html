@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Color Extractor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" >
+
+</head>
+<body>
+<h2>Upload Image 🎨</h2>
+<form method="POST" enctype="multipart/form-data">
+    <input type="file" name="image" required>
+    <button type = "submit">Upload</button>
+</form>
+
+<h2>Top Colors</h2>
+
+<div style="display:flex; justify-content:center; flex-wrap:wrap; gap:15px; margin-top:20px;">
+    {% for color in colors %}
+        <div class="color-box" style="background:{{color}};">
+            {{color}}
+        </div>
+    {% endfor %}
+</div>
+
+</body>
+</html>
